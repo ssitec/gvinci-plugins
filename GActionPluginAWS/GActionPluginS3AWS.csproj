@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="GvinciPluginBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dist\GvinciPluginBase.dll</HintPath>
+      <HintPath>..\Base\GvinciPluginBase.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,7 +52,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(ProjectDir)\bin\$(Name)\Plugins\"
+    <PostBuildEvent>mkdir "$(ProjectDir)\bin\$(ConfigurationName)\Plugins\"
 xcopy /R /K /Y "$(TargetFileName)" "$(ProjectDir)\bin\$(ConfigurationName)\Plugins\"
 xcopy /R /K /Y "$(TargetName).pdb" "$(ProjectDir)\bin\$(ConfigurationName)\Plugins\"</PostBuildEvent>
   </PropertyGroup>
