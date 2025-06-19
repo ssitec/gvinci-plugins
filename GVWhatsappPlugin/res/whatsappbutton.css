@@ -1,0 +1,41 @@
+.whatsApp-contact {
+    right: 25px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    z-index: 100;
+}
+
+.pwcAlertWapp {
+    right: 30px;
+    visibility: hidden;
+    position: fixed;
+    width: 17px;
+    height: 17px;
+    bottom: 90px;
+    background: red;
+    z-index: 101;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.pwcMsg1 {
+    right: 90px;
+    visibility: visible;
+    background: #000;
+    color: #fff;
+    position: fixed;
+    width: auto;
+    bottom: 52px;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 10px;
+    height: 32px;
+    border-radius: 100px;
+    z-index: 100;
+}

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{181641FC-E970-4C38-AB81-88381817D78F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gvinci.Plugin.Action</RootNamespace>
+    <AssemblyName>GActionPluginAKB</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GvinciPluginBase">
+      <HintPath>..\GPluginBase\bin\Debug\GvinciPluginBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GPluginActionAKBR11301.cs" />
+    <Compile Include="GPluginActionAKBR16268.cs" />
+    <Compile Include="GPluginActionAKBR21392.cs" />
+    <Compile Include="GPluginActionAKBR21393.cs" />
+    <Compile Include="GPluginActionAKBR241.cs" />
+    <Compile Include="GPluginActionAKBR3098.cs" />
+    <Compile Include="GPluginActionAKBR4554.cs" />
+    <Compile Include="GPluginActionAKBR4555.cs" />
+    <Compile Include="GPluginActionAKBR4557.cs" />
+    <Compile Include="GPluginActionAKBR4559.cs" />
+    <Compile Include="GPluginActionAKBR4717.cs" />
+    <Compile Include="GPluginActionAKBR6662.cs" />
+    <Compile Include="GPluginAKB.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "$(ProjectDir)\..\..\bin\$(ConfigurationName)\Plugins\"
+xcopy /R /K /Y "$(TargetFileName)" "$(ProjectDir)\..\..\bin\$(ConfigurationName)\Plugins\"
+xcopy /R /K /Y "$(TargetName).pdb" "$(ProjectDir)\..\..\bin\$(ConfigurationName)\Plugins\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
